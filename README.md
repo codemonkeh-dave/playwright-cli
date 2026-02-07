@@ -47,14 +47,95 @@ To verify everything is installed correctly, check the Playwright CLI version:
 playwright-cli --version
 ```
 
+## Common Commands
+
+### Running Tests
+
+Run all tests in your project:
+```bash
+npx playwright test
+```
+
+Run a specific test file:
+```bash
+npx playwright test tests/todo-page.spec.ts
+```
+
+Run tests matching a title pattern:
+```bash
+npx playwright test -g "add a todo item"
+```
+
+Run tests with headed browsers (see the browser):
+```bash
+npx playwright test --headed
+```
+
+Run only failed tests from the last run:
+```bash
+npx playwright test --last-failed
+```
+
+Run tests for a specific browser project:
+```bash
+npx playwright test --project=chromium
+```
+
+Debug tests with the Playwright Inspector:
+```bash
+npx playwright test --debug
+```
+
+### Code Generation
+
+Generate test code by recording your actions in the browser:
+```bash
+npx playwright codegen https://example.com
+```
+
+Generate code and save authentication state for reuse:
+```bash
+npx playwright codegen --save-storage=auth.json https://example.com
+```
+
+### Browser Management
+
+Install specific browsers only:
+```bash
+npx playwright install chromium webkit
+```
+
+Install browsers with system dependencies:
+```bash
+npx playwright install --with-deps
+```
+
+### Reporting and Debugging
+
+Show the HTML test report:
+```bash
+npx playwright show-report
+```
+
+Show a specific report directory:
+```bash
+npx playwright show-report playwright-report/
+```
+
+View all available commands and options:
+```bash
+npx playwright --help
+```
+
 ## Next Steps
 
 Once installed, you can use Playwright CLI to:
 - Run automated browser tests
 - Test web applications
 - Perform web scraping
-- Generate test code
-- Debug web pages
+- Generate test code by recording interactions
+- Debug web pages with the Playwright Inspector
+- View detailed HTML reports
 
 For more information, visit the [Playwright documentation](https://playwright.dev/docs/intro).
 
